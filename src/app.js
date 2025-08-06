@@ -9,7 +9,6 @@ import {
   globalError,
   globalFlash,
   notFound,
-  reqLogger,
 } from "./middleware/global.js";
 import secret from "./config/config.js";
 import { verifyToken } from "./config/jwtConfig.js";
