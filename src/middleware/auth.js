@@ -54,7 +54,7 @@ const authAdmin = async (req, res, next) => {
             req.flash("error", "Invalid token. Please login again.");
             return res.redirect("/signin");
         }
-        console.log("Admin Role", decoded.role);
+        // console.log("Admin Role", decoded.role);
         if (!(decoded.role == 'admin')) {
             req.flash("error", "Access Denied");
             return res.redirect('/home');
