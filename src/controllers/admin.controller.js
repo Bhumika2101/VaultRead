@@ -7,6 +7,7 @@ import { Review } from "../model/review.model.js";
 
 export const getAdminDashboard = async (req, res, next) => {
   try {
+    const pendingRequests = await Request.countDocuments({ status: "Requested" });
     const limit = 4;
     const page = parseInt(req.query.page) || 1;
 
@@ -20,6 +21,7 @@ export const getAdminDashboard = async (req, res, next) => {
     const totalPages = Math.ceil(totalGenres / limit);
 
     res.render("pages/admin/admindashboard", {
+      pendingRequests,
       active: "admindashboard",
       layout: "admin",
       page: {
@@ -82,7 +84,7 @@ export const getMembers = async (req, res) => {
     });
 
     // 6. Log result for verification
-    console.log("Users with request count:", users);
+    // console.log("Users with request count:", users);
 
     // 7. Render the admin page
     res.render("pages/admin/members", {

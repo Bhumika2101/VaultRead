@@ -172,7 +172,7 @@ export const borrowBook = async (req, res) => {
 
 export const getBookReviews = async (req, res) => {
   const bookId = req.params.Id;
-  console.log("Fetching reviews for book:", bookId);
+  // console.log("Fetching reviews for book:", bookId);
 
   //also populate book details like title, author, etc.
   if (!bookId) {
@@ -186,7 +186,7 @@ export const getBookReviews = async (req, res) => {
       .select("title coverimage totalReviews")
       .lean();
 
-    console.log("Book details:", book);
+    // console.log("Book details:", book);
     if (!book) {
       req.flash("error", "Book not found");
       return res.redirect("/borrowbooks");
@@ -196,7 +196,7 @@ export const getBookReviews = async (req, res) => {
       .sort({ createdAt: -1 })
       .lean();
 
-    console.log("Reviews for book:", reviews);
+    // console.log("Reviews for book:", reviews);
 
     res.render("pages/user/bookReviews", {
       book,
@@ -285,7 +285,7 @@ export const updateProfile = async (req, res) => {
   try {
     const userId = req.user.userId;
     const { fname, lname, city, state, country } = req.body;
-    console.log("Updating profile for user:", req.body);
+    // console.log("Updating profile for user:", req.body);
 
     const updatedData = {
       name: {
@@ -327,7 +327,7 @@ export const createReview = async (req, res) => {
   const { rating, comment } = req.body;
   const { bookId } = req.params;
   const userId = req.user.userId;
-  console.log("Creating review for book:", bookId, "by user:", userId);
+  // console.log("Creating review for book:", bookId, "by user:", userId);
 
   if (!rating || !comment) {
     return res.status(400).json({ message: "Rating and comment required." });
