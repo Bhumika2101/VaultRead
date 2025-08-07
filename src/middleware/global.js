@@ -9,7 +9,7 @@ export const globalError = (err, req, res, next) => {
         console.log(err.stack);
     }
 
-    console.error(err.stack);
+    // console.error(err.stack);
 
     if (statusCode === 404) {
         return res.status(404).render("404", { message });
