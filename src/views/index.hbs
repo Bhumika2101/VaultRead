@@ -84,7 +84,7 @@
         <!-- Book -->
         <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
           <div class="relative bg-gray-100 p-4 h-72 flex items-center justify-center">
-            <img src={{book.image}} alt={{book.title}}
+            <img src="/uploads/{{book.coverimage}}" alt={{book.title}}
               class="h-full object-contain">
             <span
               class="absolute top-4 left-4 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">New</span>
@@ -92,13 +92,14 @@
           <div class="p-4">
             <h3 class="text-lg font-semibold text-gray-900 mb-1">{{book.title}}</h3>
             <p class="text-gray-600 text-sm mb-3">{{book.author}}</p>
-            <div class="flex items-center space-x-2">
-              <span class="line-through text-gray-400">799</span>
-              <span class="font-bold text-gray-800">{{book.price}}</span>
-            </div>
           </div>
         </div>
         {{/each}}
+        {{#if books.length}}
+        <div class="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center">
+          <p class="text-blac">No featured books available at the moment.</p>
+        </div>
+        {{/if}}
       </div>
     </div>
   </div>
