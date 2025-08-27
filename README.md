@@ -85,8 +85,10 @@ Seed the Admin:
 Run the seeding script to insert a default admin into the database:
 
 ```bash
-node src/script/seedAdmin.js
+node src/script/createAdmin.js
 ```
+
+Start the server
 
 ```bash
 npm run start
