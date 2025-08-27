@@ -14,11 +14,9 @@ Built an advanced **Library Management System** using the **MongoDB**, **Node.js
 - 📱 Responsive and simple UI with HBS templating
 - 🛠️ Follows **MVC Architecture** for clean code structure
 
-## 🛠️ Tech Stack
-
 ---
 
-## 🚀 Tech Stack
+## 🛠️ Tech Stack
 
 - [Node.js](https://nodejs.org/) + [Express.js](https://expressjs.com/) for backend server and APIs
 - [MongoDB](https://www.mongodb.com/) + [Mongoose](https://mongoosejs.com/) for database and ODM
@@ -73,9 +71,17 @@ Run Locally:
 MONGO_URI=mongodb://localhost:27017/vaultread
 PORT=5000
 SESSION_SECRET=your_secret_key
+NODE_ENV=production
+jwt_secret=JWT_SECRET
+
+#Admin Data
+Firstname="F_name"
+Lastname="L_name"
+Email="admin@gmail.com"
+Password="Admin_pass"
 ```
 
-**Seed the Admin**
+Seed the Admin:
 Run the seeding script to insert a default admin into the database:
 
 ```bash
